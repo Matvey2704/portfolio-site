@@ -1,0 +1,32 @@
+.header {
+  margin: 0 0 26px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--muted);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.title {
+  margin: 12px 0 8px;
+  font-size: clamp(26px, 3.3vw, 36px);
+  letter-spacing: -0.035em;
+  line-height: 1.08;
+}
+
+.desc {
+  margin: 0;
+  color: var(--muted);
+  max-width: 70ch;
+  line-height: 1.55;
+}
+
