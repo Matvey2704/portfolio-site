@@ -25,13 +25,20 @@ export function Shell(props: { children: React.ReactNode }) {
       </main>
 
       <footer className={styles.footer}>
-        <Container>
-          <div className={styles.footerInner}>
-            <span>© {new Date().getFullYear()}</span>
-            <a href="#top">Наверх</a>
-          </div>
-        </Container>
-      </footer>
+  <Container>
+    <div className={styles.footerInner}>
+      <span>© {new Date().getFullYear()}</span>
+
+      <a
+        href="#top"
+        className={styles.scrollTop}
+        aria-label="Наверх"
+      >
+        ↑
+      </a>
+    </div>
+  </Container>
+</footer>
     </div>
   )
 }

@@ -19,8 +19,8 @@ export function HeroSection() {
             </p>
             <p className={styles.status}> Открыт к работе (full-time / freelance)</p>
             <div className={styles.actions}>
-              <Button href="#projects">Связаться</Button>
-              <Button href="#contact" variant="ghost">
+              <Button href="#contact">Связаться</Button>
+              <Button href="#projects" variant="ghost">
                 Посмотреть проекты
               </Button>
             </div>

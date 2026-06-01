@@ -15,12 +15,12 @@ type Project = {
 
 const projects: Project[] = [
   {
-  title: 'Форма отзывов с API',
-  desc: 'Реализовал форму отзывов с API: настроил отправку, обработку ошибок и обновление UI. Устранил нестабильное поведение при сбоях и сделал UI предсказуемым во всех состояниях (loading / success / error).',
-  tags: ['React / API / Debugging'],
-  demo: 'https://react-review-form-theta.vercel.app',
-  code: 'https://github.com/Matvey2704/react-review-form',
-  note: 'Исправил ошибки запросов, реализовал обновление UI и устранил рассинхрон состояния. Упрощённая версия — оригинал под NDA',
+  title: 'Users Dashboard',
+  desc: 'Панель управления пользователями с аналитикой, фильтрацией, поиском, детальной карточкой пользователя и интеграцией с API.',
+  tags: ['Next.js', 'TypeScript', 'React Query', 'API'],
+  demo: 'https://users-dashboard-beryl.vercel.app',
+  code: 'https://github.com/Matvey2704/users-dashboard',
+  note: 'Задание с акцентом на архитектуру, типизацию и работу с данными.',
 },
   {
   title: 'Верстка по макету + API',
@@ -37,6 +37,14 @@ const projects: Project[] = [
   demo: 'https://react-api-debug-panel.vercel.app',
   code: 'https://github.com/Matvey2704/react-api-debug-panel',
   note: 'Реплика реальной задачи из продуктовой разработки',
+},
+{
+  title: 'Форма отзывов с API',
+  desc: 'Реализовал форму отзывов с API: настроил отправку, обработку ошибок и обновление UI. Устранил нестабильное поведение при сбоях и сделал UI предсказуемым во всех состояниях (loading / success / error).',
+  tags: ['React / API / Debugging'],
+  demo: 'https://react-review-form-theta.vercel.app',
+  code: 'https://github.com/Matvey2704/react-review-form',
+  note: 'Исправил ошибки запросов, реализовал обновление UI и устранил рассинхрон состояния. Упрощённая версия — оригинал под NDA',
 }
 ]
 
