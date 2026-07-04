@@ -32,7 +32,7 @@ const experience: Experience[] = [
 
   {
     id: 'cscart',
-    company: 'CS-Cart',
+    company: 'Aqulaplay',
     role: 'Frontend',
     type: 'E-commerce',
     description:
