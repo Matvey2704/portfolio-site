@@ -49,7 +49,7 @@ export function RoadmapModal({
 
           <ul>
             <li>Коммерческий проект на CS-Cart</li>
-            <li>LegiCheck</li>
+            <li>DevSpace</li>
           </ul>
         </div>
 
@@ -59,7 +59,7 @@ export function RoadmapModal({
           <ul>
             <li>CRM Dashboard</li>
             <li>Chat с WebSocket</li>
-            <li>Интернет-магазин</li>
+            <li>LegiCheck</li>
           </ul>
         </div>
 
