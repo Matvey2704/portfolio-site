@@ -15,6 +15,17 @@
   flex-direction: column;
   min-height: 360px;
   gap: 10px;
+  border: 1px solid transparent;
+  transition:
+    transform var(--duration-base) var(--ease-out),
+    box-shadow var(--duration-base) var(--ease-out),
+    border-color var(--duration-base) var(--ease-out);
+
+  &:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent-border);
+    box-shadow: 0 16px 32px -16px rgba(139, 92, 246, 0.35);
+  }
 }
 
 .titleRow {
@@ -51,6 +62,14 @@
   display: inline-flex;
   align-items: center;
   height: 28px;
+  transition:
+    border-color var(--duration-base) var(--ease-out),
+    background var(--duration-base) var(--ease-out);
+}
+
+.card:hover .tag {
+  border-color: var(--accent-border);
+  background: var(--accent-bg);
 }
 
 .actions {

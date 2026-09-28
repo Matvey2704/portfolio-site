@@ -9,7 +9,7 @@ export function AboutSection() {
       <Container>
         <SectionHeading
           eyebrow="Обо мне"
-          title="Пишу поддерживаемый фронтенд"
+          title="Пишу поддерживаемый код — от интерфейса до бэкенда"
           desc="Фокус на интерфейсах, стабильности и понятной архитектуре."
         />
 
@@ -17,27 +17,29 @@ export function AboutSection() {
           <div className={styles.text}>
             <p>
               Работаю от интерфейса до интеграции API и доведения до продакшена.
-              Не просто пишу UI, а разбираюсь, как он ведет себя реальными даннымии в разных состояниях.
+              Не просто пишу UI, а разбираюсь, как он ведёт себя с реальными данными и в разных состояниях.
+            </p>
+            <p>
+              Есть хендс-он опыт полного цикла: спроектировал и собрал собственный сервис на Next.js с PostgreSQL/Prisma,
+              включая JWT-аутентификацию с нуля.
             </p>
             <p>
               В работе ценю предсказуемость: типы, единый стиль, небольшие
               компоненты и код, который можно спокойно поддерживать.
             </p>
-            <p>
-              Работаю в стартапе, поэтому привык быстро разбираться в задачах и доводить их до рабочего состояния.
-            </p>
           </div>
 
           <div className={styles.stack} aria-label="Стек">
             <Chip>React</Chip>
+            <Chip>Vue 3</Chip>
             <Chip>TypeScript</Chip>
-            <Chip>Vite</Chip>
+            <Chip>Next.js</Chip>
+            <Chip>Node.js</Chip>
+            <Chip>PostgreSQL</Chip>
             <Chip>SCSS Modules</Chip>
-            <Chip>ESLint</Chip>
           </div>
         </div>
       </Container>
     </section>
   )
 }
-

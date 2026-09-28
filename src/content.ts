@@ -1,6 +1,6 @@
 export const profile = {
   name: 'Юмин Матвей',
-  title: 'Frontend Developer',
+  title: 'FullStack Developer',
   short:
     'Делаю UI, интегрирую API, отлаживаю сложные кейсы и довожу фичи до production.',
   about:

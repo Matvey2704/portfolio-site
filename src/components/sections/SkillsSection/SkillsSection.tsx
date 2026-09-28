@@ -5,13 +5,22 @@ import styles from './SkillsSection.module.scss'
 
 const skills = [
   'React',
+  'Vue 3',
   'TypeScript',
-  'Vite',
+  'Next.js',
+  'Node.js',
+  'Redux Toolkit',
+  'React Query',
+  'Pinia',
+  'REST API',
+  'PostgreSQL',
+  'Prisma',
+  'Docker',
+  'Tailwind CSS',
   'SCSS Modules',
   'Адаптивная верстка',
   'Доступность (a11y)',
-  'API интеграции',
-  'ESLint',
+  'Jest',
   'Git',
 ]
 
@@ -33,4 +42,3 @@ export function SkillsSection() {
     </section>
   )
 }
-

@@ -8,7 +8,7 @@ export function Shell(props: { children: React.ReactNode }) {
         <Container>
           <div className={styles.headerInner}>
             <a className={styles.brand} href="#top">
-              Frontend Developer
+               Frontend / Fullstack Developer
             </a>
             <nav className={styles.nav} aria-label="Навигация">
               <a href="#about">Обо мне</a>

@@ -47,18 +47,7 @@
   box-shadow: var(--shadow);
 }
 
-.panelTitle {
-  font-weight: 650;
-  margin-bottom: 10px;
-}
 
-.list {
-  margin: 0;
-  padding-left: 18px;
-  color: var(--muted);
-  display: grid;
-  gap: 8px;
-}
 .status {
   margin-top: 12px;
   display: inline-block;
@@ -75,3 +64,48 @@
   }
 }
 
+.flipCard {
+  min-height: 320px;
+}
+
+.panelFace {
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.panelName {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 4px;
+  letter-spacing: 0.02em;
+}
+
+.panelTitle {
+  font-weight: 650;
+  margin-bottom: 14px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border);
+}
+
+.list {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+  display: grid;
+  gap: 10px;
+}
+
+.list li::marker {
+  color: var(--accent);
+}
+.photoFace {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  display: block;
+}
