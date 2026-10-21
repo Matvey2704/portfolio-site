@@ -1,0 +1,236 @@
+@use '../../../styles/anime' as a;
+
+.mascot {
+  position: fixed;
+  z-index: 60; // выше контента, ниже модалок (1000)
+  width: 104px;
+  cursor: grab;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: none; // чтобы на телефоне палец тащил её, а не страницу
+  outline: none;
+  filter: drop-shadow(3px 5px 0 rgba(43, 35, 80, 0.18));
+}
+
+.mascot:focus-visible {
+  border-radius: 24px;
+  outline: 3px dashed a.$sky;
+  outline-offset: 4px;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.dragging {
+  cursor: grabbing;
+}
+
+.sprite {
+  transform-origin: 50% 100%;
+  animation: bob 2.6s ease-in-out infinite;
+}
+
+.art {
+  display: block;
+  overflow: visible;
+}
+
+.hop .sprite {
+  animation: hop 0.6s ease-out;
+}
+
+.dragging .sprite {
+  animation: none;
+  transform: scale(1.08) rotate(-5deg);
+  transition: transform 0.15s ease;
+}
+
+/* моргание */
+.eyes {
+  transform-origin: 60px 66px;
+  animation: blink 4.6s infinite;
+}
+
+/* хвостики покачиваются */
+.tailL {
+  transform-origin: 32px 52px;
+  animation: swingL 3s ease-in-out infinite;
+}
+
+.tailR {
+  transform-origin: 88px 52px;
+  animation: swingR 3s ease-in-out infinite;
+}
+
+/* машет рукой, когда говорит */
+.armR {
+  transform-origin: 80px 102px;
+}
+
+.hop .armR {
+  animation: wave 0.6s ease-in-out;
+}
+
+/* пузырь с репликой */
+.bubble {
+  position: absolute;
+  bottom: calc(100% + 6px);
+  width: max-content;
+  max-width: 190px;
+  padding: 8px 12px;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: a.$ink;
+  background: #fff;
+  border: 2px solid a.$ink;
+  border-radius: 14px;
+  box-shadow: 3px 3px 0 a.$pink-soft;
+  animation: pop 0.22s ease-out;
+  pointer-events: none;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    width: 10px;
+    height: 10px;
+    margin-top: -6px;
+    background: #fff;
+    border-right: 2px solid a.$ink;
+    border-bottom: 2px solid a.$ink;
+    transform: rotate(45deg);
+  }
+}
+
+.bubbleLeft {
+  left: 0;
+
+  &::after {
+    left: 28px;
+  }
+}
+
+.bubbleRight {
+  right: 0;
+
+  &::after {
+    right: 28px;
+  }
+}
+
+.bubbleBelow {
+  bottom: auto;
+  top: calc(100% + 6px);
+
+  &::after {
+    top: auto;
+    bottom: 100%;
+    margin-top: 0;
+    margin-bottom: -6px;
+    transform: rotate(225deg);
+  }
+}
+
+@keyframes bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes hop {
+  0% {
+    transform: translateY(0) scale(1, 1);
+  }
+  25% {
+    transform: translateY(0) scale(1.06, 0.92);
+  }
+  55% {
+    transform: translateY(-16px) scale(0.96, 1.06);
+  }
+  100% {
+    transform: translateY(0) scale(1, 1);
+  }
+}
+
+@keyframes blink {
+  0%,
+  93%,
+  100% {
+    transform: scaleY(1);
+  }
+  96% {
+    transform: scaleY(0.08);
+  }
+}
+
+@keyframes swingL {
+  0%,
+  100% {
+    transform: rotate(3deg);
+  }
+  50% {
+    transform: rotate(-4deg);
+  }
+}
+
+@keyframes swingR {
+  0%,
+  100% {
+    transform: rotate(-3deg);
+  }
+  50% {
+    transform: rotate(4deg);
+  }
+}
+
+@keyframes wave {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+  30% {
+    transform: rotate(-35deg);
+  }
+  60% {
+    transform: rotate(10deg);
+  }
+}
+
+@keyframes pop {
+  from {
+    opacity: 0;
+    transform: translateY(6px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (max-width: 640px) {
+  .mascot {
+    width: 84px;
+  }
+
+  .bubble {
+    max-width: 150px;
+    font-size: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sprite,
+  .eyes,
+  .tailL,
+  .tailR,
+  .hop .armR,
+  .bubble {
+    animation: none !important;
+  }
+}

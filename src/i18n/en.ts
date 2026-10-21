@@ -23,6 +23,8 @@ export const en: Dict = {
     themeDefault: 'Default',
     themeWin98: 'Win98',
     themeAnime: 'Anime',
+    mascot: 'Chibi',
+    mascotTitle: 'Show or hide the chibi helper',
   },
 
   common: {
@@ -30,6 +32,18 @@ export const en: Dict = {
     copy: 'Copy',
     write: 'Message',
     view: 'View',
+  },
+
+  mascot: {
+    aria: 'Chibi helper Haru. Press to make her talk, or drag her around',
+    lines: [
+      'Hi! I’m Haru ✦',
+      'Like the site?',
+      'Drag me anywhere!',
+      'Check out the projects ↓',
+      'Good luck with your tasks! ♡',
+      'Psst… you can hide me with the “Chibi” button',
+    ],
   },
 
   carousel: {

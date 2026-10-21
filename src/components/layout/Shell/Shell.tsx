@@ -1,11 +1,15 @@
 import { Container } from '../../ui/Container/Container'
 import { LangSwitch } from '../../ui/LangSwitch/LangSwitch'
 import { ThemeSwitch } from '../../ui/ThemeSwitch/ThemeSwitch'
+import { MascotToggle } from '../../ui/MascotToggle/MascotToggle'
+import { Mascot } from '../../common/Mascot/Mascot'
+import { useTheme } from '../../../theme/useTheme'
 import { useLanguage } from '../../../i18n/useLanguage'
 import styles from './Shell.module.scss'
 
 export function Shell(props: { children: React.ReactNode }) {
   const { t } = useLanguage()
+  const { theme, mascot } = useTheme()
 
   return (
     <div className={styles.shell}>
@@ -25,6 +29,7 @@ export function Shell(props: { children: React.ReactNode }) {
               <div className={styles.controls}>
                 <ThemeSwitch />
                 <LangSwitch />
+                <MascotToggle />
               </div>
             </div>
           </div>
@@ -46,6 +51,8 @@ export function Shell(props: { children: React.ReactNode }) {
           </div>
         </Container>
       </footer>
+
+      {theme === 'anime' && mascot && <Mascot />}
     </div>
   )
 }

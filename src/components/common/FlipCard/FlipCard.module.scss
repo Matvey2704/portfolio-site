@@ -2,6 +2,7 @@
 @use '../../../styles/anime' as a;
 
 .scene {
+  position: relative; // подсказка .hint позиционируется внутри карточки
   perspective: relative;
   cursor: pointer;
   width: 100%;

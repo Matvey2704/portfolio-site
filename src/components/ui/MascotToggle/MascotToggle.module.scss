@@ -1,0 +1,37 @@
+@use '../../../styles/anime' as a;
+
+.group {
+  display: inline-flex;
+  padding: 2px;
+  border-radius: 999px;
+  border: 2px solid a.$ink;
+  background: #fff;
+  box-shadow: 2px 2px 0 a.$pink-soft;
+}
+
+.option {
+  padding: 5px 12px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: a.$ink;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.18s ease;
+}
+
+.option:hover {
+  background: a.$pink-soft;
+}
+
+.option:focus-visible {
+  outline: 3px solid a.$sky;
+  outline-offset: 1px;
+}
+
+.active,
+.active:hover {
+  background: a.$pink;
+  color: #fff;
+}

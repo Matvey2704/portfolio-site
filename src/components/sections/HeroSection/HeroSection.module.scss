@@ -165,7 +165,7 @@
   .hero::before {
     content: '';
     position: absolute;
-    inset: -24px -40px;
+    inset: -24px 0; // не шире экрана, иначе появляется горизонтальная прокрутка
     z-index: -1;
     pointer-events: none;
     background: repeating-conic-gradient(
