@@ -1,4 +1,5 @@
 import { useState, type ReactNode } from 'react'
+import { useLanguage } from '../../../i18n/useLanguage'
 import styles from './FlipCard.module.scss'
 
 interface FlipCardProps {
@@ -8,6 +9,7 @@ interface FlipCardProps {
 }
 
 export function FlipCard({ front, back, className = '' }: FlipCardProps) {
+  const { t } = useLanguage()
   const [flipped, setFlipped] = useState(false)
 
   return (
@@ -17,7 +19,7 @@ export function FlipCard({ front, back, className = '' }: FlipCardProps) {
       role="button"
       tabIndex={0}
       aria-pressed={flipped}
-      aria-label="Перевернуть карточку"
+      aria-label={t.flip.aria}
       onKeyDown={(e) => {
         if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault()
@@ -32,7 +34,7 @@ export function FlipCard({ front, back, className = '' }: FlipCardProps) {
 
       <div className={styles.hint} aria-hidden="true">
         <span className={styles.hintIcon}>⟳</span>
-        {flipped ? 'Назад' : 'Нажми, чтобы перевернуть'}
+        {flipped ? t.flip.back : t.flip.hint}
       </div>
     </div>
   )

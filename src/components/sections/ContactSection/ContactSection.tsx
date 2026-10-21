@@ -2,9 +2,12 @@ import { Container } from '../../ui/Container/Container'
 import { SectionHeading } from '../../ui/SectionHeading/SectionHeading'
 import { Button } from '../../ui/Button/Button'
 import { Card } from '../../ui/Card/Card'
+import { useLanguage } from '../../../i18n/useLanguage'
 import styles from './ContactSection.module.scss'
 
 export function ContactSection() {
+  const { t } = useLanguage()
+
   const email = 'yuminmatvei@gmail.com'
   const tg = 'https://t.me/yuminmatvey'
   const github = 'https://github.com/Matvey2704'
@@ -12,25 +15,19 @@ export function ContactSection() {
   return (
     <section id="contact" className={styles.section}>
       <Container>
-        <SectionHeading
-          eyebrow="Контакты"
-          title="Давайте обсудим задачу"
-        />
+        <SectionHeading eyebrow={t.contact.eyebrow} title={t.contact.title} />
 
         <Card className={styles.card}>
           <div className={styles.row}>
-  <div>
-    <div className={styles.label}>Email</div>
-    <div className={styles.value}>{email}</div>
-  </div>
+            <div>
+              <div className={styles.label}>Email</div>
+              <div className={styles.value}>{email}</div>
+            </div>
 
-  <Button
-    onClick={() => navigator.clipboard.writeText(email)}
-    variant="primary"
-  >
-    Скопировать
-  </Button>
-</div>
+            <Button onClick={() => navigator.clipboard.writeText(email)} variant="primary">
+              {t.common.copy}
+            </Button>
+          </div>
 
           <div className={styles.row}>
             <div>
@@ -40,30 +37,24 @@ export function ContactSection() {
               </a>
             </div>
             <Button href={tg} target="_blank" variant="primary">
-              Написать
+              {t.common.write}
             </Button>
           </div>
 
           <div className={styles.row}>
-  <div>
-    <div className={styles.label}>GitHub</div>
-    <a
-      className={styles.value}
-      href={github}
-      target="_blank"
-      rel="noreferrer"
-    >
-      {github.replace('https://github.com/', '')}
-    </a>
-  </div>
+            <div>
+              <div className={styles.label}>GitHub</div>
+              <a className={styles.value} href={github} target="_blank" rel="noreferrer">
+                {github.replace('https://github.com/', '')}
+              </a>
+            </div>
 
-  <Button href={github} target="_blank" variant="ghost">
-    Смотреть
-  </Button>
-</div>
+            <Button href={github} target="_blank" variant="ghost">
+              {t.common.view}
+            </Button>
+          </div>
         </Card>
       </Container>
     </section>
   )
 }
-

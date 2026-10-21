@@ -1,4 +1,5 @@
 import { Children, useEffect, useRef, useState, type ReactNode } from 'react'
+import { useLanguage } from '../../../i18n/useLanguage'
 import styles from './Carousel.module.scss'
 
 interface CarouselProps {
@@ -7,6 +8,7 @@ interface CarouselProps {
 }
 
 export function Carousel({ children, ariaLabel }: CarouselProps) {
+  const { t } = useLanguage()
   const items = Children.toArray(children)
   const trackRef = useRef<HTMLDivElement>(null)
   const slideRefs = useRef<(HTMLDivElement | null)[]>([])
@@ -76,7 +78,7 @@ export function Carousel({ children, ariaLabel }: CarouselProps) {
         className={`${styles.arrow} ${styles.arrowLeft}`}
         onClick={() => scrollToIndex(active - 1)}
         disabled={active === 0}
-        aria-label="Предыдущая карточка"
+        aria-label={t.carousel.prev}
       >
         ‹
       </button>
@@ -101,7 +103,7 @@ export function Carousel({ children, ariaLabel }: CarouselProps) {
         className={`${styles.arrow} ${styles.arrowRight}`}
         onClick={() => scrollToIndex(active + 1)}
         disabled={active === items.length - 1}
-        aria-label="Следующая карточка"
+        aria-label={t.carousel.next}
       >
         ›
       </button>

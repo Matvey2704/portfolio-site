@@ -1,42 +1,34 @@
 import { Container } from '../../ui/Container/Container'
 import { SectionHeading } from '../../ui/SectionHeading/SectionHeading'
 import { Chip } from '../../ui/Chip/Chip'
+import { useLanguage } from '../../../i18n/useLanguage'
 import styles from './AboutSection.module.scss'
 
+const stack = ['React', 'Vue 3', 'TypeScript', 'Next.js', 'Node.js', 'PostgreSQL', 'SCSS Modules']
+
 export function AboutSection() {
+  const { t } = useLanguage()
+
   return (
     <section id="about" className={styles.section}>
       <Container>
         <SectionHeading
-          eyebrow="Обо мне"
-          title="Пишу поддерживаемый код — от интерфейса до бэкенда"
-          desc="Фокус на интерфейсах, стабильности и понятной архитектуре."
+          eyebrow={t.about.eyebrow}
+          title={t.about.title}
+          desc={t.about.desc}
         />
 
         <div className={styles.grid}>
           <div className={styles.text}>
-            <p>
-              Работаю от интерфейса до интеграции API и доведения до продакшена.
-              Не просто пишу UI, а разбираюсь, как он ведёт себя с реальными данными и в разных состояниях.
-            </p>
-            <p>
-              Есть хендс-он опыт полного цикла: спроектировал и собрал собственный сервис на Next.js с PostgreSQL/Prisma,
-              включая JWT-аутентификацию с нуля.
-            </p>
-            <p>
-              В работе ценю предсказуемость: типы, единый стиль, небольшие
-              компоненты и код, который можно спокойно поддерживать.
-            </p>
+            {t.about.paragraphs.map((p) => (
+              <p key={p}>{p}</p>
+            ))}
           </div>
 
-          <div className={styles.stack} aria-label="Стек">
-            <Chip>React</Chip>
-            <Chip>Vue 3</Chip>
-            <Chip>TypeScript</Chip>
-            <Chip>Next.js</Chip>
-            <Chip>Node.js</Chip>
-            <Chip>PostgreSQL</Chip>
-            <Chip>SCSS Modules</Chip>
+          <div className={styles.stack} aria-label={t.about.stackAria}>
+            {stack.map((s) => (
+              <Chip key={s}>{s}</Chip>
+            ))}
           </div>
         </div>
       </Container>

@@ -1,3 +1,5 @@
+import { createPortal } from 'react-dom'
+import { useLanguage } from '../../../i18n/useLanguage'
 import styles from './RoadmapModal.module.scss'
 
 type RoadmapModalProps = {
@@ -6,63 +8,47 @@ type RoadmapModalProps = {
 }
 
 export function RoadmapModal({ open, onClose }: RoadmapModalProps) {
+  const { t } = useLanguage()
+
   if (!open) return null
 
-  return (
+  const r = t.roadmap
+
+  const groups = [
+    { title: r.doneTitle, items: r.done, dot: styles.dotDone },
+    { title: r.progressTitle, items: r.progress, dot: styles.dotProgress },
+    { title: r.plannedTitle, items: r.planned, dot: styles.dotPlanned },
+  ]
+
+  return createPortal(
     <div className={styles.overlay} onClick={onClose}>
       <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
-        <button className={styles.close} onClick={onClose} aria-label="Закрыть">
+        <button className={styles.close} onClick={onClose} aria-label={t.common.close}>
           ×
         </button>
 
-        <h2 className={styles.title}>Планы развития</h2>
+        <h2 className={styles.title}>{r.title}</h2>
 
-        <p className={styles.description}>
-          Портфолио регулярно пополняется новыми коммерческими и pet-проектами.
-        </p>
+        <p className={styles.description}>{r.description}</p>
 
-        <div className={styles.section}>
-          <div className={styles.sectionHeader}>
-            <span className={`${styles.dot} ${styles.dotDone}`} />
-            <h3>Завершённые проекты</h3>
+        {groups.map((g) => (
+          <div key={g.title} className={styles.section}>
+            <div className={styles.sectionHeader}>
+              <span className={`${styles.dot} ${g.dot}`} />
+              <h3>{g.title}</h3>
+            </div>
+
+            <ul>
+              {g.items.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
           </div>
+        ))}
 
-          <ul>
-            <li>Users Dashboard</li>
-            <li>React Review Form</li>
-            <li>API Debug Panel</li>
-            <li>Portfolio Website</li>
-          </ul>
-        </div>
-
-        <div className={styles.section}>
-          <div className={styles.sectionHeader}>
-            <span className={`${styles.dot} ${styles.dotProgress}`} />
-            <h3>В разработке</h3>
-          </div>
-
-          <ul>
-            <li>Маркетинговый сайт — GF Digital</li>
-            <li>Коммерческий проект на CS-Cart</li>
-            <li>DevSpace</li>
-          </ul>
-        </div>
-
-        <div className={styles.section}>
-          <div className={styles.sectionHeader}>
-            <span className={`${styles.dot} ${styles.dotPlanned}`} />
-            <h3>Запланировано</h3>
-          </div>
-
-          <ul>
-            <li>CRM Dashboard</li>
-            <li>Chat с WebSocket</li>
-            <li>LegiCheck</li>
-          </ul>
-        </div>
-
-        <p className={styles.footer}>Список проектов регулярно обновляется.</p>
+        <p className={styles.footer}>{r.footer}</p>
       </div>
-    </div>
+    </div>,
+    document.body,
   )
 }

@@ -1,4 +1,6 @@
+import { createPortal } from 'react-dom'
 import { Button } from '../Button/Button'
+import { useLanguage } from '../../../i18n/useLanguage'
 import styles from './ContactModal.module.scss'
 
 type ContactModalProps = {
@@ -11,16 +13,18 @@ const tg = 'https://t.me/yuminmatvey'
 const github = 'https://github.com/Matvey2704'
 
 export function ContactModal({ open, onClose }: ContactModalProps) {
+  const { t } = useLanguage()
+
   if (!open) return null
 
-  return (
+  return createPortal(
     <div className={styles.overlay} onClick={onClose}>
       <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
-        <button className={styles.close} onClick={onClose} aria-label="Закрыть">
+        <button className={styles.close} onClick={onClose} aria-label={t.common.close}>
           ×
         </button>
 
-        <h2 className={styles.title}>Давайте обсудим задачу</h2>
+        <h2 className={styles.title}>{t.contact.title}</h2>
 
         <div className={styles.row}>
           <div>
@@ -29,7 +33,7 @@ export function ContactModal({ open, onClose }: ContactModalProps) {
           </div>
 
           <Button onClick={() => navigator.clipboard.writeText(email)} variant="primary">
-            Скопировать
+            {t.common.copy}
           </Button>
         </div>
 
@@ -42,7 +46,7 @@ export function ContactModal({ open, onClose }: ContactModalProps) {
           </div>
 
           <Button href={tg} target="_blank" variant="primary">
-            Написать
+            {t.common.write}
           </Button>
         </div>
 
@@ -55,10 +59,11 @@ export function ContactModal({ open, onClose }: ContactModalProps) {
           </div>
 
           <Button href={github} target="_blank" variant="ghost">
-            Смотреть
+            {t.common.view}
           </Button>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body,
   )
 }
