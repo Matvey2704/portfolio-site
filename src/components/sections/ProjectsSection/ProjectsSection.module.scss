@@ -95,6 +95,20 @@
   color: rgba(255, 255, 255, 0.45);
 }
 
+@media (max-width: 640px) {
+  .section {
+    padding: 28px 0;
+  }
+
+  .card {
+    min-height: 0;
+  }
+
+  .desc {
+    min-height: 0;
+  }
+}
+
 @media (max-width: 980px) {
   .grid {
     grid-template-columns: 1fr;
