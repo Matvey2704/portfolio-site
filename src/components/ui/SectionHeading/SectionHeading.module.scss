@@ -1,4 +1,5 @@
 @use '../../../styles/win98' as w;
+@use '../../../styles/anime' as a;
 
 .header {
   margin: 0 0 26px;
@@ -52,5 +53,40 @@
 
   .desc {
     color: #303030;
+  }
+}
+
+/* ───────────── Anime ───────────── */
+:global([data-theme='anime']) {
+  .eyebrow {
+    padding: 4px 12px;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    color: #fff;
+    background: a.$pink;
+    border: 2px solid a.$ink;
+    border-radius: 999px;
+    box-shadow: 2px 2px 0 a.$ink;
+  }
+
+  .eyebrow::before {
+    content: '✦';
+    margin-right: 2px;
+  }
+
+  .title {
+    font-weight: 800;
+    letter-spacing: 0;
+    color: a.$ink;
+    // жёлтый «маркер» построчно (работает и при переносе заголовка)
+    text-decoration: underline;
+    text-decoration-color: a.$sun;
+    text-decoration-thickness: 0.3em;
+    text-underline-offset: -0.12em;
+    text-decoration-skip-ink: none;
+  }
+
+  .desc {
+    color: a.$muted-ink;
   }
 }

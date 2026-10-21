@@ -1,4 +1,5 @@
 @use '../../../styles/win98' as w;
+@use '../../../styles/anime' as a;
 
 .section {
   padding: 42px 0;
@@ -118,5 +119,32 @@
 
   .note {
     color: #404040;
+  }
+}
+
+/* ───────────── Anime ───────────── */
+:global([data-theme='anime']) {
+  .card:hover {
+    transform: translate(-2px, -3px);
+    border-color: a.$ink;
+    box-shadow: 8px 8px 0 a.$pink-soft;
+  }
+
+  .tag {
+    font-weight: 700;
+    @include a.sticker;
+    @include a.pastel-cycle;
+  }
+
+  .card:hover .tag {
+    border-color: a.$ink;
+  }
+
+  .title {
+    font-weight: 800;
+  }
+
+  .note {
+    color: a.$muted-ink;
   }
 }

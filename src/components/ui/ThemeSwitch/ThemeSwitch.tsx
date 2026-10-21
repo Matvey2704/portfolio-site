@@ -10,6 +10,7 @@ export function ThemeSwitch() {
   const options: { id: Theme; label: string }[] = [
     { id: 'default', label: t.switchers.themeDefault },
     { id: 'win98', label: t.switchers.themeWin98 },
+    { id: 'anime', label: t.switchers.themeAnime },
   ]
 
   return (

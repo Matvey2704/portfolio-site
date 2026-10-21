@@ -6,7 +6,7 @@ const STORAGE_KEY = 'theme'
 function detectInitialTheme(): Theme {
   try {
     const saved = localStorage.getItem(STORAGE_KEY)
-    if (saved === 'default' || saved === 'win98') return saved
+    if (saved === 'default' || saved === 'win98' || saved === 'anime') return saved
   } catch {
     // localStorage может быть недоступен — используем тему по умолчанию
   }

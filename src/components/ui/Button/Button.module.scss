@@ -1,4 +1,5 @@
 @use '../../../styles/win98' as w;
+@use '../../../styles/anime' as a;
 
 .button {
   display: inline-flex;
@@ -103,5 +104,48 @@
   .ghost,
   .ghost:hover {
     background: w.$face;
+  }
+}
+
+/* ───────────── Anime ───────────── */
+:global([data-theme='anime']) {
+  .button {
+    padding: 11px 20px;
+    border: 3px solid a.$ink;
+    color: a.$ink;
+    font-weight: 800;
+    background: #fff;
+    box-shadow: 3px 3px 0 a.$ink;
+  }
+
+  .button:hover {
+    box-shadow: 4px 4px 0 a.$ink;
+  }
+
+  .button:active {
+    box-shadow: 1px 1px 0 a.$ink;
+  }
+
+  .button:focus-visible {
+    outline: 3px solid a.$sky;
+    outline-offset: 2px;
+    border-color: a.$ink;
+    box-shadow: 3px 3px 0 a.$ink;
+  }
+
+  .primary,
+  .primary:hover {
+    background: linear-gradient(135deg, #ff8fc4, #ffc28a);
+    border-color: a.$ink;
+  }
+
+  .ghost,
+  .ghost:hover {
+    background: #fff;
+    border-color: a.$ink;
+  }
+
+  .ghost:hover {
+    background: a.$sky-soft;
   }
 }

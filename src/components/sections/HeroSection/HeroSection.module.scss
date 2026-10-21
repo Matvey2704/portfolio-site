@@ -1,4 +1,5 @@
 @use '../../../styles/win98' as w;
+@use '../../../styles/anime' as a;
 
 .hero {
   padding: 22px 0 8px;
@@ -150,5 +151,75 @@
     border-radius: 0;
     border: 2px solid;
     border-color: w.$dark w.$light w.$light w.$dark;
+  }
+}
+
+/* ───────────── Anime ───────────── */
+:global([data-theme='anime']) {
+  // «скоростные линии» манги за героем
+  .hero {
+    position: relative;
+    isolation: isolate;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: -24px -40px;
+    z-index: -1;
+    pointer-events: none;
+    background: repeating-conic-gradient(
+      from 0deg at 80% 46%,
+      rgba(255, 255, 255, 0.75) 0deg 1.4deg,
+      transparent 1.4deg 7deg
+    );
+    -webkit-mask-image: radial-gradient(circle at 80% 46%, transparent 9%, #000 52%, transparent 100%);
+    mask-image: radial-gradient(circle at 80% 46%, transparent 9%, #000 52%, transparent 100%);
+  }
+
+  .kicker {
+    font-weight: 700;
+    @include a.sticker(a.$sky-soft);
+  }
+
+  .title {
+    font-weight: 800;
+    letter-spacing: 0;
+    line-height: 1.12;
+    color: a.$ink;
+    text-shadow: 3px 3px 0 a.$pink-soft;
+  }
+
+  .subtitle {
+    color: a.$muted-ink;
+  }
+
+  .status {
+    font-weight: 800;
+    color: #0b6b4a;
+    @include a.sticker(a.$mint);
+  }
+
+  .panel {
+    color: a.$ink;
+    @include a.panel;
+  }
+
+  .panelName {
+    color: a.$pink-hot;
+  }
+
+  .panelTitle {
+    border-bottom: 2px dashed a.$ink;
+  }
+
+  .list {
+    color: a.$ink;
+  }
+
+  .photoFace {
+    border: 3px solid a.$ink;
+    border-radius: 20px;
+    box-shadow: 6px 6px 0 a.$pink-soft;
   }
 }

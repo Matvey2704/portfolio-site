@@ -1,4 +1,5 @@
 @use '../../../styles/win98' as w;
+@use '../../../styles/anime' as a;
 
 .card {
   border-radius: var(--radius-lg);
@@ -16,5 +17,15 @@
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
     @include w.sunken(#fff);
+  }
+}
+
+/* ───────────── Anime ───────────── */
+:global([data-theme='anime']) {
+  .card {
+    color: a.$ink;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    @include a.panel;
   }
 }

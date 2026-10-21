@@ -74,6 +74,91 @@ html[data-theme='win98'] {
   background: #008080;
 }
 
+/* ───────────── Тема: Anime (sakura manga) ───────────── */
+:root[data-theme='anime'] {
+  color-scheme: light;
+
+  --bg0: #ffd9ea;
+  --bg1: #ffffff;
+  --surface: #ffffff;
+  --surface2: #fff0f7;
+  --border: #2b2350;
+  --border2: #2b2350;
+
+  --text: #2b2350;
+  --muted: #5b5280;
+  --faint: #8a83ad;
+
+  --brand: #ff5fa2;
+  --brand2: #5ab7ff;
+
+  --shadow: none;
+  --radius-lg: 20px;
+  --radius-md: 16px;
+  --radius-sm: 12px;
+
+  --text-h: #2b2350;
+  --accent: #ff3d8b;
+  --accent-bg: #ffe0ee;
+  --accent-border: #ff3d8b;
+  --code-bg: #fff0f7;
+
+  --duration-base: 0.45s;
+}
+
+html[data-theme='anime'] {
+  background:
+    radial-gradient(rgba(255, 255, 255, 0.6) 1.2px, transparent 1.7px) 0 0 / 14px 14px,
+    linear-gradient(160deg, #ffd9ea 0%, #e6dcff 48%, #cdeaff 100%);
+  background-attachment: fixed;
+}
+
+html[data-theme='anime'] body {
+  font-family: 'Hiragino Maru Gothic ProN', 'M PLUS Rounded 1c', Nunito,
+    'Hiragino Sans', 'Yu Gothic UI', system-ui, sans-serif;
+  letter-spacing: 0;
+}
+
+html[data-theme='anime'] ::selection {
+  background: #ff5fa2;
+  color: #fff;
+}
+
+/* Лепестки сакуры: медленно дрейфуют по диагонали */
+html[data-theme='anime'] body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.85;
+  background-image:
+    radial-gradient(ellipse 9px 6px at 12% 14%, #ffb3d4 62%, transparent 66%),
+    radial-gradient(ellipse 7px 5px at 38% 36%, #ffc9e0 62%, transparent 66%),
+    radial-gradient(ellipse 10px 6px at 72% 22%, #ffb3d4 62%, transparent 66%),
+    radial-gradient(ellipse 6px 4px at 88% 58%, #ffd6e8 62%, transparent 66%),
+    radial-gradient(ellipse 8px 5px at 24% 74%, #ffc9e0 62%, transparent 66%),
+    radial-gradient(ellipse 9px 6px at 58% 86%, #ffb3d4 62%, transparent 66%),
+    radial-gradient(ellipse 6px 4px at 46% 58%, #ffd6e8 62%, transparent 66%);
+  background-size: 420px 420px;
+  animation: sakuraDrift 26s linear infinite;
+}
+
+@keyframes sakuraDrift {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 420px 420px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html[data-theme='anime'] body::before {
+    animation: none;
+  }
+}
+
 html[data-theme='win98'] body {
   font-family: Tahoma, 'MS Sans Serif', 'Segoe UI', Verdana, Geneva, sans-serif;
   font-size: 14px;

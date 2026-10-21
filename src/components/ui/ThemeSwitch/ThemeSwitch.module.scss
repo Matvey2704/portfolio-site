@@ -1,4 +1,5 @@
 @use '../../../styles/win98' as w;
+@use '../../../styles/anime' as a;
 
 .group {
   display: inline-flex;
@@ -70,5 +71,31 @@
     font-weight: 700;
     color: #000;
     @include w.pressed(w.$light);
+  }
+}
+
+/* ───────────── Anime ───────────── */
+:global([data-theme='anime']) {
+  .group {
+    padding: 2px;
+    background: #fff;
+    border: 2px solid a.$ink;
+    box-shadow: 2px 2px 0 a.$pink-soft;
+  }
+
+  .option {
+    color: a.$ink;
+    font-weight: 700;
+  }
+
+  .option:hover {
+    background: a.$pink-soft;
+    color: a.$ink;
+  }
+
+  .active,
+  .active:hover {
+    background: a.$pink;
+    color: #fff;
   }
 }

@@ -20,6 +20,7 @@ export const ru = {
     themeAria: 'Тема оформления',
     themeDefault: 'Обычная',
     themeWin98: 'Win98',
+    themeAnime: 'Аниме',
   },
 
   common: {

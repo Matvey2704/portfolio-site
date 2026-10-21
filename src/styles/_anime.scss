@@ -1,0 +1,48 @@
+// Общие «кирпичики» аниме-темы (sakura manga): толстые тёмные контуры,
+// жёсткие «комиксные» тени и пастельные цвета.
+
+$ink: #2b2350;
+$pink: #ff5fa2;
+$pink-hot: #ff3d8b;
+$pink-soft: #ffb3d4;
+$sky: #5ab7ff;
+$sky-soft: #bfe3ff;
+$mint: #a6f0d2;
+$sun: #ffe27a;
+$lav: #d4c4ff;
+$muted-ink: #5b5280;
+
+// Карточка-«панель манги»
+@mixin panel($shadow: $pink-soft, $radius: 20px, $offset: 5px) {
+  background: #fff;
+  border: 3px solid $ink;
+  border-radius: $radius;
+  box-shadow: $offset $offset 0 $shadow;
+}
+
+// Пилюля-«стикер»
+@mixin sticker($bg: #fff) {
+  background: $bg;
+  color: $ink;
+  border: 2px solid $ink;
+  border-radius: 999px;
+}
+
+// Пастельная смена цветов у соседних элементов
+@mixin pastel-cycle {
+  &:nth-child(5n + 1) {
+    background: $pink-soft;
+  }
+  &:nth-child(5n + 2) {
+    background: $sky-soft;
+  }
+  &:nth-child(5n + 3) {
+    background: $sun;
+  }
+  &:nth-child(5n + 4) {
+    background: $mint;
+  }
+  &:nth-child(5n + 5) {
+    background: $lav;
+  }
+}

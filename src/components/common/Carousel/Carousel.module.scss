@@ -1,4 +1,5 @@
 @use '../../../styles/win98' as w;
+@use '../../../styles/anime' as a;
 
 .carousel {
   position: relative;
@@ -100,5 +101,24 @@
     opacity: 1;
     color: w.$shadow;
     text-shadow: 1px 1px 0 w.$hi;
+  }
+}
+
+/* ───────────── Anime ───────────── */
+:global([data-theme='anime']) {
+  .arrow {
+    color: a.$ink;
+    background: #fff;
+    border: 3px solid a.$ink;
+    box-shadow: 3px 3px 0 a.$pink-soft;
+  }
+
+  .arrow:hover:not(:disabled) {
+    background: a.$pink-soft;
+    border-color: a.$ink;
+  }
+
+  .arrow:disabled {
+    opacity: 0.35;
   }
 }

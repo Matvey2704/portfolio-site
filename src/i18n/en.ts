@@ -22,6 +22,7 @@ export const en: Dict = {
     themeAria: 'Color theme',
     themeDefault: 'Default',
     themeWin98: 'Win98',
+    themeAnime: 'Anime',
   },
 
   common: {

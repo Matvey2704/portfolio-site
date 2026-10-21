@@ -1,4 +1,5 @@
 @use '../../../styles/win98' as w;
+@use '../../../styles/anime' as a;
 
 .shell {
   min-height: 100vh;
@@ -222,5 +223,54 @@
 
   .scrollTop:active {
     @include w.pressed;
+  }
+}
+
+/* ───────────── Anime ───────────── */
+:global([data-theme='anime']) {
+  .header {
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(8px);
+    border-bottom: 3px solid a.$ink;
+    box-shadow: 0 4px 0 a.$pink-soft;
+  }
+
+  .brand {
+    font-weight: 800;
+    letter-spacing: 0;
+    color: a.$ink;
+  }
+
+  .brand::before {
+    content: '✦ ';
+    color: a.$pink;
+  }
+
+  .nav {
+    color: a.$ink;
+    font-weight: 700;
+  }
+
+  .nav a:hover {
+    color: a.$pink-hot;
+  }
+
+  .footer {
+    border-top: 3px dashed a.$ink;
+    color: a.$muted-ink;
+  }
+
+  .scrollTop {
+    color: a.$ink;
+    background: #fff;
+    border: 2px solid a.$ink;
+    box-shadow: 3px 3px 0 a.$pink-soft;
+  }
+
+  .scrollTop:hover {
+    transform: translate(-2px, -2px);
+    background: a.$pink-soft;
+    border-color: a.$ink;
+    box-shadow: 5px 5px 0 a.$ink;
   }
 }

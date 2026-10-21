@@ -1,6 +1,6 @@
 import { createContext } from 'react'
 
-export type Theme = 'default' | 'win98'
+export type Theme = 'default' | 'win98' | 'anime'
 
 export type ThemeContextValue = {
   theme: Theme

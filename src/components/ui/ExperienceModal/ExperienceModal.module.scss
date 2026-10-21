@@ -1,4 +1,5 @@
 @use '../../../styles/win98' as w;
+@use '../../../styles/anime' as a;
 
 .overlay {
     position: fixed;
@@ -190,5 +191,61 @@
     border-radius: 0;
     color: #000;
     @include w.sunken(#fff);
+  }
+}
+
+/* ───────────── Anime ───────────── */
+:global([data-theme='anime']) {
+  .overlay {
+    background: rgba(43, 35, 80, 0.5);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+  }
+
+  .modal {
+    color: a.$ink;
+    @include a.panel(a.$pink-soft, 24px, 8px);
+  }
+
+  .title {
+    color: a.$ink;
+    font-weight: 800;
+  }
+
+  .close {
+    top: 14px;
+    right: 14px;
+    float: none;
+    width: 36px;
+    height: 36px;
+    color: a.$ink;
+    font-size: 22px;
+    font-weight: 800;
+    line-height: 1;
+    background: a.$pink-soft;
+    border: 2px solid a.$ink;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 2px 2px 0 a.$ink;
+  }
+
+  .close:hover {
+    color: a.$ink;
+    background: a.$sun;
+    border-color: a.$ink;
+  }
+
+  .role,
+  .block p,
+  .list {
+    color: a.$muted-ink;
+  }
+
+  .tag {
+    font-weight: 700;
+    @include a.sticker;
+    @include a.pastel-cycle;
   }
 }
