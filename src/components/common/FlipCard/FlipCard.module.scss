@@ -1,3 +1,5 @@
+@use '../../../styles/win98' as w;
+
 .scene {
   perspective: relative;
   cursor: pointer;
@@ -82,5 +84,23 @@
   50% {
     opacity: 1;
     transform: translateY(-2px);
+  }
+}
+
+/* ───────────── Windows 98 ───────────── */
+:global([data-theme='win98']) {
+  .hint {
+    border: 1px solid #000;
+    border-radius: 0;
+    background: #ffffe1;
+    color: #000;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    animation: none;
+  }
+
+  .scene:focus-visible {
+    outline: 1px dotted #000;
+    outline-offset: 4px;
   }
 }

@@ -1,5 +1,6 @@
 import { Container } from '../../ui/Container/Container'
 import { LangSwitch } from '../../ui/LangSwitch/LangSwitch'
+import { ThemeSwitch } from '../../ui/ThemeSwitch/ThemeSwitch'
 import { useLanguage } from '../../../i18n/useLanguage'
 import styles from './Shell.module.scss'
 
@@ -22,6 +23,7 @@ export function Shell(props: { children: React.ReactNode }) {
                 <a href="#contact">{t.nav.contact}</a>
               </nav>
               <div className={styles.controls}>
+                <ThemeSwitch />
                 <LangSwitch />
               </div>
             </div>

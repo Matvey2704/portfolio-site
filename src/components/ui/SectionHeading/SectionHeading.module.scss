@@ -1,3 +1,5 @@
+@use '../../../styles/win98' as w;
+
 .header {
   margin: 0 0 26px;
 }
@@ -30,3 +32,25 @@
   line-height: 1.55;
 }
 
+/* ───────────── Windows 98 ───────────── */
+:global([data-theme='win98']) {
+  .eyebrow {
+    padding: 3px 10px;
+    border: 0;
+    border-radius: 0;
+    background: w.$titlebar;
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+  }
+
+  .title {
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 1.15;
+  }
+
+  .desc {
+    color: #303030;
+  }
+}

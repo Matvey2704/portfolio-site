@@ -1,3 +1,5 @@
+@use '../../../styles/win98' as w;
+
 .overlay {
     position: fixed;
     inset: 0;
@@ -57,4 +59,66 @@
     margin-top: 24px;
     color: rgba(255, 255, 255, .45);
     font-size: 14px;
+}
+
+/* ───────────── Windows 98 ───────────── */
+:global([data-theme='win98']) {
+  .overlay {
+    background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
+  .modal {
+    position: relative;
+    padding: 44px 24px 24px;
+    color: #000;
+    animation: none;
+    @include w.raised;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      right: 3px;
+      height: 20px;
+      background: w.$titlebar;
+    }
+  }
+
+  .close {
+    position: absolute;
+    top: 5px;
+    right: 6px;
+    float: none;
+    width: 20px;
+    height: 16px;
+    color: #000;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1;
+    transition: none;
+    @include w.raised;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .close:hover {
+    color: #000;
+    background: w.$face;
+  }
+
+  .close:active {
+    @include w.pressed;
+  }
+
+  .description {
+    color: #303030;
+  }
+
+  .footer {
+    color: #404040;
+  }
 }

@@ -1,3 +1,5 @@
+@use '../../../styles/win98' as w;
+
 .group {
   display: inline-flex;
   padding: 2px;
@@ -34,4 +36,39 @@
 .active {
   background: rgba(124, 92, 255, 0.35);
   color: var(--text);
+}
+
+/* ───────────── Windows 98 ───────────── */
+:global([data-theme='win98']) {
+  .group {
+    padding: 0;
+    gap: 3px;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+  }
+
+  .option {
+    min-width: 40px;
+    padding: 5px 10px;
+    color: #000;
+    font-weight: 400;
+    transition: none;
+    @include w.raised;
+  }
+
+  .option:hover {
+    color: #000;
+  }
+
+  .option:focus-visible {
+    @include w.focus-dotted;
+  }
+
+  .active,
+  .active:hover {
+    font-weight: 700;
+    color: #000;
+    @include w.pressed(w.$light);
+  }
 }

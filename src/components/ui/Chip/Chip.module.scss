@@ -1,3 +1,5 @@
+@use '../../../styles/win98' as w;
+
 .chip {
   display: inline-flex;
   align-items: center;
@@ -11,3 +13,11 @@
   white-space: nowrap;
 }
 
+/* ───────────── Windows 98 ───────────── */
+:global([data-theme='win98']) {
+  .chip {
+    padding: 7px 12px;
+    color: #000;
+    @include w.raised;
+  }
+}

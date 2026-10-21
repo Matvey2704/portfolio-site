@@ -1,0 +1,51 @@
+// Общие «кирпичики» оформления Windows 98 (фаски делаются через inset box-shadow, как в 98.css)
+
+$face: #c0c0c0;
+$hi: #ffffff;
+$light: #dfdfdf;
+$shadow: #808080;
+$dark: #0a0a0a;
+$navy: #000080;
+$titlebar: linear-gradient(90deg, #000080, #1084d0);
+
+// Выпуклая поверхность: кнопки, окна, панели
+@mixin raised($bg: $face) {
+  background: $bg;
+  border: 0;
+  border-radius: 0;
+  box-shadow:
+    inset -1px -1px $dark,
+    inset 1px 1px $hi,
+    inset -2px -2px $shadow,
+    inset 2px 2px $light;
+}
+
+// Вдавленная поверхность: поля ввода, карточки-«списки»
+@mixin sunken($bg: $hi) {
+  background: $bg;
+  border: 0;
+  border-radius: 0;
+  box-shadow:
+    inset -1px -1px $hi,
+    inset 1px 1px $shadow,
+    inset -2px -2px $light,
+    inset 2px 2px $dark;
+}
+
+// Нажатая кнопка
+@mixin pressed($bg: $face) {
+  background: $bg;
+  border: 0;
+  border-radius: 0;
+  box-shadow:
+    inset -1px -1px $hi,
+    inset 1px 1px $dark,
+    inset -2px -2px $light,
+    inset 2px 2px $shadow;
+}
+
+// Пунктирный фокус
+@mixin focus-dotted {
+  outline: 1px dotted #000;
+  outline-offset: -5px;
+}

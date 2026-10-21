@@ -1,3 +1,5 @@
+@use '../../../styles/win98' as w;
+
 .section {
   padding: 42px 0;
 }
@@ -95,5 +97,26 @@
 @media (max-width: 980px) {
   .grid {
     grid-template-columns: 1fr;
+  }
+}
+
+/* ───────────── Windows 98 ───────────── */
+:global([data-theme='win98']) {
+  .card:hover {
+    transform: none;
+    @include w.sunken(#fff);
+  }
+
+  .tag {
+    color: #000;
+    @include w.raised;
+  }
+
+  .card:hover .tag {
+    background: w.$face;
+  }
+
+  .note {
+    color: #404040;
   }
 }

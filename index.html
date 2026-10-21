@@ -9,6 +9,12 @@
       content="Персональный сайт-портфолио frontend-разработчика: UI, интеграции API, отладка и разработка реальных фич."
     />
     <title>Frontend Developer — Portfolio</title>
+    <script>
+      try {
+        var t = localStorage.getItem('theme')
+        if (t === 'win98' || t === 'default') document.documentElement.dataset.theme = t
+      } catch (e) {}
+    </script>
   </head>
   <body>
     <div id="root"></div>

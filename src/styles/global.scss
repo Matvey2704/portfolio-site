@@ -23,6 +23,66 @@
   --radius-sm: 12px;
 
   --container: 1080px;
+
+  /* Токены, которые используются в компонентах (раньше жили в неподключённом index.css) */
+  --text-h: #f3f4f6;
+  --accent: #8b5cf6;
+  --accent-bg: rgba(139, 92, 246, 0.12);
+  --accent-border: rgba(139, 92, 246, 0.45);
+  --code-bg: rgba(255, 255, 255, 0.06);
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-flip: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-base: 0.7s;
+  --duration-fast: 0.18s;
+  --duration-flip: 0.9s;
+}
+
+/* ───────────── Тема: Windows 98 ───────────── */
+:root[data-theme='win98'] {
+  color-scheme: light;
+
+  --bg0: #008080;
+  --bg1: #c0c0c0;
+  --surface: #c0c0c0;
+  --surface2: #dfdfdf;
+  --border: #808080;
+  --border2: #404040;
+
+  --text: #000000;
+  --muted: #303030;
+  --faint: #555555;
+
+  --brand: #000080;
+  --brand2: #1084d0;
+
+  --shadow: none;
+  --radius-lg: 0;
+  --radius-md: 0;
+  --radius-sm: 0;
+
+  --text-h: #000000;
+  --accent: #000080;
+  --accent-bg: #ffffff;
+  --accent-border: #000080;
+  --code-bg: #c0c0c0;
+
+  --duration-base: 0.25s;
+}
+
+html[data-theme='win98'] {
+  background: #008080;
+}
+
+html[data-theme='win98'] body {
+  font-family: Tahoma, 'MS Sans Serif', 'Segoe UI', Verdana, Geneva, sans-serif;
+  font-size: 14px;
+  letter-spacing: 0;
+}
+
+html[data-theme='win98'] ::selection {
+  background: #000080;
+  color: #ffffff;
 }
 
 *,

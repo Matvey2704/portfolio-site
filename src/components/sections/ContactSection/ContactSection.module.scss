@@ -1,3 +1,5 @@
+@use '../../../styles/win98' as w;
+
 .section {
   padding: 42px 0 10px;
 }
@@ -36,3 +38,13 @@
   }
 }
 
+/* ───────────── Windows 98 ───────────── */
+:global([data-theme='win98']) {
+  .row {
+    @include w.raised;
+  }
+
+  .label {
+    color: #303030;
+  }
+}

@@ -1,3 +1,5 @@
+@use '../../../styles/win98' as w;
+
 .carousel {
   position: relative;
   display: flex;
@@ -73,5 +75,30 @@
 @media (max-width: 980px) {
   .track {
     --slide-width: 84vw;
+  }
+}
+
+/* ───────────── Windows 98 ───────────── */
+:global([data-theme='win98']) {
+  .arrow {
+    width: 36px;
+    height: 36px;
+    color: #000;
+    transition: none;
+    @include w.raised;
+  }
+
+  .arrow:hover:not(:disabled) {
+    background: w.$face;
+  }
+
+  .arrow:active:not(:disabled) {
+    @include w.pressed;
+  }
+
+  .arrow:disabled {
+    opacity: 1;
+    color: w.$shadow;
+    text-shadow: 1px 1px 0 w.$hi;
   }
 }

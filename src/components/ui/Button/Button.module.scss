@@ -1,3 +1,5 @@
+@use '../../../styles/win98' as w;
+
 .button {
   display: inline-flex;
   align-items: center;
@@ -49,4 +51,57 @@
 .ghost:hover {
   background: rgba(255, 255, 255, 0.07);
   border-color: var(--border2);
+}
+
+/* ───────────── Windows 98 ───────────── */
+:global([data-theme='win98']) {
+  .button {
+    min-height: 32px;
+    padding: 6px 18px;
+    color: #000;
+    font-weight: 400;
+    transition: none;
+    transform: none !important; // перебиваем inline-transform от framer-motion
+    @include w.raised;
+  }
+
+  .button:hover {
+    background: w.$face;
+  }
+
+  .button:active {
+    padding: 7px 17px 5px 19px;
+    @include w.pressed;
+  }
+
+  .button:focus-visible {
+    @include w.raised;
+    @include w.focus-dotted;
+  }
+
+  .primary,
+  .primary:hover {
+    font-weight: 700;
+    background: w.$face;
+    box-shadow:
+      0 0 0 1px w.$dark,
+      inset -1px -1px w.$dark,
+      inset 1px 1px w.$hi,
+      inset -2px -2px w.$shadow,
+      inset 2px 2px w.$light;
+  }
+
+  .primary:active {
+    box-shadow:
+      0 0 0 1px w.$dark,
+      inset -1px -1px w.$hi,
+      inset 1px 1px w.$dark,
+      inset -2px -2px w.$light,
+      inset 2px 2px w.$shadow;
+  }
+
+  .ghost,
+  .ghost:hover {
+    background: w.$face;
+  }
 }

@@ -1,3 +1,5 @@
+@use '../../../styles/win98' as w;
+
 .shell {
   min-height: 100vh;
   display: flex;
@@ -114,5 +116,111 @@
   .nav {
     flex-wrap: wrap;
     gap: 6px 14px;
+  }
+}
+
+/* ───────────── Windows 98 ───────────── */
+:global([data-theme='win98']) {
+  .shell {
+    position: relative;
+    width: min(1180px, calc(100% - 24px));
+    min-height: calc(100vh - 24px);
+    margin: 12px auto;
+    padding: 3px;
+    color: #000;
+    @include w.raised;
+
+    &::before {
+      content: 'Portfolio.exe';
+      display: block;
+      flex: 0 0 auto;
+      height: 20px;
+      padding: 0 6px;
+      line-height: 20px;
+      font-size: 13px;
+      font-weight: 700;
+      color: #fff;
+      background: w.$titlebar;
+    }
+
+    &::after {
+      content: '_ \25A1 \00D7';
+      position: absolute;
+      top: 5px;
+      right: 6px;
+      height: 16px;
+      padding: 0 6px;
+      line-height: 16px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      color: #000;
+      @include w.raised;
+    }
+  }
+
+  .header {
+    background: w.$face;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border-bottom: 0;
+    box-shadow: 0 1px 0 w.$shadow, 0 2px 0 w.$hi;
+  }
+
+  .headerInner {
+    padding: 6px 0;
+  }
+
+  .brand {
+    padding: 4px 12px;
+    font-weight: 700;
+    letter-spacing: 0;
+    color: #000;
+    @include w.raised;
+  }
+
+  .brand:active {
+    @include w.pressed;
+  }
+
+  .nav {
+    color: #000;
+  }
+
+  .nav a {
+    padding: 4px 10px;
+  }
+
+  .nav a:hover {
+    color: #000;
+    @include w.raised;
+  }
+
+  .main {
+    padding: 24px 0 32px;
+  }
+
+  .footer {
+    border-top: 0;
+    color: #000;
+    box-shadow: 0 -1px 0 w.$shadow, 0 -2px 0 w.$hi;
+  }
+
+  .scrollTop {
+    width: 32px;
+    height: 32px;
+    color: #000;
+    transition: none;
+    @include w.raised;
+  }
+
+  .scrollTop:hover {
+    transform: none;
+    color: #000;
+    background: w.$face;
+  }
+
+  .scrollTop:active {
+    @include w.pressed;
   }
 }

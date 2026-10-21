@@ -1,3 +1,5 @@
+@use '../../../styles/win98' as w;
+
 .hero {
   padding: 22px 0 8px;
 }
@@ -108,4 +110,45 @@
   object-fit: cover;
   border-radius: var(--radius-lg);
   display: block;
+}
+
+/* ───────────── Windows 98 ───────────── */
+:global([data-theme='win98']) {
+  .kicker {
+    padding: 4px 10px;
+    color: #000;
+    @include w.sunken(#fff);
+  }
+
+  .title {
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 1.15;
+  }
+
+  .subtitle {
+    color: #303030;
+  }
+
+  .status {
+    padding: 4px 10px;
+    color: #006400;
+    font-weight: 700;
+    @include w.sunken(#fff);
+  }
+
+  .panel {
+    color: #000;
+    @include w.raised;
+  }
+
+  .list {
+    color: #000;
+  }
+
+  .photoFace {
+    border-radius: 0;
+    border: 2px solid;
+    border-color: w.$dark w.$light w.$light w.$dark;
+  }
 }
