@@ -37,7 +37,7 @@ export const en: Dict = {
   mascot: {
     aria: 'Chibi helper Haru. Press to make her talk, or drag her around',
     lines: [
-      'Hi! I’m Haru ✦',
+      'Hi! I’m Bambi ✦',
       'Like the site?',
       'Drag me anywhere!',
       'Check out the projects ↓',
@@ -249,6 +249,16 @@ export const en: Dict = {
         title: 'Layout from a design + API',
         desc: 'Built an interface from a design mockup and connected an API. Implemented loading, empty-data and error states, making the UI behave predictably across scenarios.',
         note: 'Implemented search, tabs and list state handling. Simplified version — the original is under NDA',
+      },
+      wishly: {
+        title: 'Wishly — wishlist fullstack app',
+        desc: 'A fullstack service for creating wishlists: users add wishes with images, links, prices, categories and importance, while guests can view lists and reserve gifts without accessing the owner’s account.',
+        note: 'React + TypeScript on Vercel, FastAPI on Render and PostgreSQL on Neon. Includes auth, CRUD, image uploads, profiles and a responsive mobile version.',
+      },
+      freelance: {
+        title: '3D freelance portfolio website',
+        desc: 'A personal freelance portfolio with expressive 3D presentation, animations, interactive cards and responsive sections. The site showcases a practical approach to UI, motion and frontend architecture.',
+        note: 'React + TypeScript + Vite. Custom animations, visual themes and interactive components.',
       },
       cscart: {
         title: 'Customizing an online store on CS-Cart',

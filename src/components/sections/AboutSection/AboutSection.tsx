@@ -4,7 +4,7 @@ import { Chip } from '../../ui/Chip/Chip'
 import { useLanguage } from '../../../i18n/useLanguage'
 import styles from './AboutSection.module.scss'
 
-const stack = ['React', 'Vue 3', 'TypeScript', 'Next.js', 'Node.js', 'PostgreSQL', 'SCSS Modules']
+const stack = ['React', 'Vue 3', 'TypeScript', 'Next.js', 'Node.js', 'PHP', 'Python', 'FastAPI', 'REST API', 'PostgreSQL', 'SCSS Modules']
 
 export function AboutSection() {
   const { t } = useLanguage()

@@ -9,7 +9,7 @@ import { Carousel } from '../../common/Carousel/Carousel'
 import { useLanguage } from '../../../i18n/useLanguage'
 import styles from './ProjectsSection.module.scss'
 
-type ProjectId = 'roadmap' | 'devspace' | 'users' | 'apidebug' | 'review' | 'layout' | 'cscart'
+type ProjectId = 'roadmap' | 'devspace' | 'users' | 'apidebug' | 'review' | 'layout' | 'cscart' | 'wishly' | 'freelance'
 
 type ProjectMeta = {
   id: ProjectId
@@ -20,6 +20,16 @@ type ProjectMeta = {
 
 const projects: ProjectMeta[] = [
   { id: 'roadmap', tags: ['Roadmap', 'React'] },
+  {
+    id: 'wishly',
+    tags: ['React', 'TypeScript', 'Python', 'FastAPI', 'PostgreSQL', 'REST API'],
+    demo: 'https://wishly-five-iota.vercel.app/',
+  },
+  {
+    id: 'freelance',
+    tags: ['React', 'TypeScript', '3D UI', 'Animations', 'Vite'],
+    demo: 'https://yuminmatvey.vercel.app',
+  },
   {
     id: 'devspace',
     tags: ['Next.js', 'TypeScript', 'PostgreSQL', 'Prisma', 'Tailwind CSS'],
